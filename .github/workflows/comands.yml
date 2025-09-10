@@ -5,9 +5,7 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
-      - name: Check for deprecated
-        run: |
-          deprecated=true
-          if [[ $deprecated == true ]]; then
-            echo "::warning::Deprecated function found"
-          fi
+      - name: set API key 
+        run: echo "API_KEY=12345" >> $GITHUP_ENV
+      - name: use API key 
+        run: echo "using API key $API_KEY"
